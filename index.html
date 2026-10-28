@@ -1,163 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday Bushra ❤️</title>
-
-<style>
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-family: Georgia, serif;
-    color: white;
-    background: linear-gradient(135deg, #190019, #79004b, #ff5c8a);
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  .card {
-    padding: 25px;
-    width: 90%;
-    max-width: 650px;
-    z-index: 2;
-  }
-
-  h1 {
-    font-size: clamp(2.5rem, 9vw, 4.5rem);
-    color: #ffe0ed;
-    text-shadow: 0 0 20px #ff80b5;
-    animation: glow 2s infinite alternate;
-  }
-
-  p {
-    font-size: 1.3rem;
-    line-height: 1.8;
-  }
-
-  button {
-    padding: 15px 28px;
-    border: none;
-    border-radius: 30px;
-    background: #ffb6d5;
-    color: #59002e;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 0 20px #ffb6d5;
-  }
-
-  #surprise {
-    display: none;
-    animation: appear 1.5s ease;
-  }
-
-  .heart {
-    position: fixed;
-    bottom: -40px;
-    animation: floatUp 6s linear forwards;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  @keyframes glow {
-    from { text-shadow: 0 0 10px #ff80b5; }
-    to { text-shadow: 0 0 35px #fff, 0 0 55px #ff4d94; }
-  }
-
-  @keyframes floatUp {
-    to {
-      transform: translateY(-110vh) rotate(360deg);
-      opacity: 0;
-    }
-  }
-
-  @keyframes appear {
-    from { opacity: 0; transform: scale(.7); }
-    to { opacity: 1; transform: scale(1); }
-  }
-</style>
-</head>
-
-<body onclick="reveal(event)">
-
-<div class="card">
-  <div id="welcome">
-    <h1>Hey, Bushra ❤️</h1>
-    <p>I made something special just for you...</p>
-    <button onclick="showSurprise(event)">
-      Click for your surprise 💌
-    </button>
-    <p style="font-size: 14px;">(Tap anywhere on the screen too ✨)</p>
-  </div>
-
-  <div id="surprise">
-    <h1>🎂 Happy Birthday to BUSHRA 🎂</h1>
-    <p>
-      You are special, you are beautiful,<br>
-      and you deserve all the happiness in the world. 💖
-    </p>
-    <p>
-      May your life always shine with love,<br>
-      laughter, and beautiful moments. 
-    </p>
-    <h2>With lots of love ❤️</h2>
-    <p>Made especially for you, Bushra! 💕</p>
-  </div>
-</div>
-
-<script>
-  let opened = false;
-
-  function showSurprise(event) {
-    event.stopPropagation();
-    reveal();
-  }
-
-  function reveal() {
-    if (opened) return;
-    opened = true;
-
-    document.getElementById("welcome").style.display = "none";
-    document.getElementById("surprise").style.display = "block";
-
-    for (let i = 0; i < 45; i++) {
-      setTimeout(createHeart, i * 100);
-    }
-  }
-
-  function createHeart() {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.textContent = ["❤️", "💖", "💕", "🌹", "✨"][Math.floor(Math.random() * 5)];
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.fontSize = (18 + Math.random() * 25) + "px";
-    heart.style.animationDuration = (3 + Math.random() * 4) + "s";
-
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 7500);
-  }
-</script>
-
-</body>
-</html>
-
-
-xac Sam <samxac6@gmail.com>
-Sun 25 Oct, 13:01 (3 days ago)
-to me
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#100d2b" />
@@ -198,6 +41,10 @@ to me
     button:focus-visible {
       outline: 3px solid var(--gold);
       outline-offset: 5px;
+    }
+
+    [hidden] {
+      display: none !important;
     }
 
     .stars,
@@ -262,6 +109,7 @@ to me
     .screen {
       position: relative;
       z-index: 1;
+      min-height: 100vh;
       min-height: 100svh;
       padding: 30px 18px;
       display: flex;
@@ -278,6 +126,7 @@ to me
       border-radius: 28px;
       background: linear-gradient(145deg, #ffffff12, #ffffff06);
       box-shadow: 0 20px 90px #00000035, inset 0 0 35px #ffffff05;
+      -webkit-backdrop-filter: blur(12px);
       backdrop-filter: blur(12px);
     }
 
@@ -346,12 +195,7 @@ to me
     }
 
     #birthday {
-      display: none;
       animation: appear 1.1s ease both;
-    }
-
-    #birthday.visible {
-      display: flex;
     }
 
     @keyframes appear {
@@ -468,7 +312,6 @@ to me
     }
 
     .letter {
-      display: none;
       max-width: 540px;
       margin: 22px auto 0;
       padding: 25px;
@@ -479,10 +322,6 @@ to me
       line-height: 1.9;
       text-align: left;
       animation: appear 700ms ease both;
-    }
-
-    .letter.open {
-      display: block;
     }
 
     .letter h2 {
@@ -525,6 +364,7 @@ to me
       margin-top: 30px;
       color: #cdbddc;
       font-size: 0.8rem;
+      line-height: 1.7;
     }
 
     .sparkle {
@@ -540,10 +380,6 @@ to me
         transform: translateY(110vh) rotate(600deg);
         opacity: 0;
       }
-    }
-
-    .hidden {
-      display: none !important;
     }
 
     @media (max-width: 480px) {
@@ -572,10 +408,13 @@ to me
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
       }
     }
@@ -586,282 +425,211 @@ to me
   <div class="stars" aria-hidden="true"></div>
   <div class="moon" aria-hidden="true"></div>
 
-  <!-- FIRST SCREEN: the surprise stays hidden until the button is clicked -->
-  <main id="welcome" class="screen">
-    <section class="welcome-card" aria-labelledby="welcome-title">
-      <p class="eyebrow">A tiny bit of magic awaits</p>
-      <div class="gift" aria-hidden="true">🎁</div>
+  <main>
+    <!-- Welcome screen -->
+    <section id="welcome" class="screen" aria-labelledby="welcome-title">
+      <div class="welcome-card">
+        <p class="eyebrow">A tiny bit of magic awaits</p>
 
-      <h1 id="welcome-title">
-        A little <span class="pink">secret</span><br />
-        is waiting for you
-      </h1>
+        <div class="gift" aria-hidden="true">🎁</div>
 
-      <p class="subtitle">
-        Someone wonderful deserves a little magic today.
-        Are you ready to discover something special?
-      </p>
+        <h1 id="welcome-title">
+          A little <span class="pink">secret</span><br />
+          is waiting for you
+        </h1>
 
-      <button id="open-surprise" class="magic-button" type="button">
-        Open Your Surprise ✨
-      </button>
+        <p class="subtitle">
+          Ajkur din ta onek besi spacial....
+        </p>
 
-      <p class="small-note">Made with a little stardust and lots of love.</p>
+        <button id="open-surprise" class="magic-button" type="button">
+          Okhano click koro ✨
+        </button>
+
+        <p class="small-note">My love💞</p>
+      </div>
     </section>
-  </main>
 
-  <!-- SECOND SCREEN: revealed by the button above -->
-  <main id="birthday" class="screen" aria-live="polite">
-    <section class="birthday-card" aria-labelledby="birthday-title">
-      <p class="eyebrow">Today, the stars shine for you</p>
+    <!-- Birthday screen -->
+    <section
+      id="birthday"
+      class="screen"
+      aria-labelledby="birthday-title"
+      hidden
+    >
+      <div class="birthday-card">
+        <p class="eyebrow">Today, the stars shine for you</p>
 
-      <h1 id="birthday-title">
-        Happy Birthday,<br />
-        <span class="pink">Bushra!</span>
-      </h1>
+        <h1 id="birthday-title" tabindex="-1">
+          Happy Birthday To<br />
+          My Love<br />
+          <span class="pink">Bushra!</span>
+        </h1>
 
-      <div class="cake" aria-hidden="true">🎂</div>
+        <div class="cake" aria-hidden="true">🎂</div>
 
-      <p class="message">
-        May your special day be sprinkled with stardust,
-        wrapped in happiness, and filled with the kind of
-        little moments that make your heart smile.
-        <br /><br />
-        May every wish you whisper to the moon find its way
-        to you, and may the year ahead bring beautiful
-        surprises, peaceful days, and countless reasons to smile.
-        <br /><br />
-        You deserve a world as lovely as the magic you bring
-        into it. Keep shining, keep dreaming, and never forget
-        how wonderfully special you are. 🌙
-      </p>
+        <p class="message">
+          You deserve a world as lovely as the magic you bring
+          into it. Keep shining, keep dreaming, and never forget
+          how wonderfully special you are. 🌙
+        </p>
 
-      <div class="divider" aria-hidden="true"></div>
+        <div class="divider" aria-hidden="true"></div>
 
-      <p class="pink">A little letter, just for you…</p>
+        <p class="pink">A little letter, just for you…</p>
 
-      <div class="envelope-wrap">
-        <button
-          id="envelope"
-          class="envelope"
-          type="button"
-          aria-expanded="false"
-          aria-controls="letter"
-          aria-label="Open your birthday letter"
-        >
-          <span class="envelope-flap" aria-hidden="true"></span>
-          <span class="envelope-heart" aria-hidden="true">💌</span>
-        </button>
+        <div class="envelope-wrap">
+          <button
+            id="envelope"
+            class="envelope"
+            type="button"
+            aria-expanded="false"
+            aria-controls="letter"
+            aria-label="Open your birthday letter"
+          >
+            <span class="envelope-flap" aria-hidden="true"></span>
+            <span class="envelope-heart" aria-hidden="true">💌</span>
+          </button>
 
-        <p class="small-note">Tap the envelope to open your letter.</p>
+          <p id="envelope-note" class="small-note">
+            Click kori open koro.
+          </p>
+        </div>
+
+        <article id="letter" class="letter" hidden>
+          <h2>Dear Bushra, 💗</h2>
+
+          <p>
+            Amare kunudin chariya jaio na
+          </p>
+
+          <p>
+            Today is all about celebrating you — your story,
+            your smile, and all the wonderful chapters still ahead.
+            Never stop believing in the magic waiting for you.
+          </p>
+
+          <p class="signature">
+            I Love you 💞
+          </p>
+        </article>
+
+        <div class="controls">
+          <button id="sparkle-button" class="secondary-button" type="button">
+            ✨ Sprinkle More Magic
+          </button>
+        </div>
+
+        <p class="footer">
+          Made especially for Bushra · With love, under the same moon 🌙
+        </p>
       </div>
-
-      <article id="letter" class="letter" aria-hidden="true">
-        <h2>Dear Bushra, 💗</h2>
-
-        <p>
-          If I could wrap a feeling into a gift, it would be the
-          happiness I wish for you today. I hope life surprises
-          you with beautiful things when you least expect them.
-        </p>
-
-        <p>
-          May you always find courage when things feel difficult,
-          laughter on ordinary days, and people who remind you
-          how precious you are. May your dreams grow bigger and
-          your heart stay full of wonder.
-        </p>
-
-        <p>
-          Today is all about celebrating you — your story,
-          your smile, and all the wonderful chapters still ahead.
-          Never stop believing in the magic waiting for you.
-        </p>
-
-        <p class="signature">
-          With lots of love and a little stardust ✨
-        </p>
-      </article>
-
-      <div class="controls">
-        <button id="music-button" class="secondary-button" type="button">
-          ♫ Play Birthday Music
-        </button>
-
-        <button id="sparkle-button" class="secondary-button" type="button">
-          ✨ Sprinkle More Magic
-        </button>
-      </div>
-
-      <p class="footer">
-        Made especially for Bushra · With love, under the same moon 🌙
-      </p>
     </section>
   </main>
 
   <script>
     const welcome = document.getElementById("welcome");
     const birthday = document.getElementById("birthday");
+    const birthdayTitle = document.getElementById("birthday-title");
     const openSurprise = document.getElementById("open-surprise");
     const envelope = document.getElementById("envelope");
+    const envelopeNote = document.getElementById("envelope-note");
     const letter = document.getElementById("letter");
-    const musicButton = document.getElementById("music-button");
     const sparkleButton = document.getElementById("sparkle-button");
 
-    // Reveal the birthday page only after the visitor clicks.
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    );
+
+    // Reveal the birthday surprise.
     openSurprise.addEventListener("click", () => {
-      welcome.classList.add("hidden");
-      birthday.classList.add("visible");
+      welcome.hidden = true;
+      birthday.hidden = false;
+
+      birthdayTitle.focus({ preventScroll: true });
+
+      window.scrollTo({
+        top: 0,
+        behavior: reducedMotion.matches ? "instant" : "smooth"
+      });
 
       sprinkleMagic(45);
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      document.getElementById("birthday-title").focus?.();
     });
 
-    // Open and close the interactive letter.
+    // Open or close the birthday letter.
     envelope.addEventListener("click", () => {
       const isOpen = envelope.classList.toggle("open");
 
-      letter.classList.toggle("open", isOpen);
+      letter.hidden = !isOpen;
       envelope.setAttribute("aria-expanded", String(isOpen));
-      letter.setAttribute("aria-hidden", String(!isOpen));
+      envelope.setAttribute(
+        "aria-label",
+        isOpen
+          ? "Close your birthday letter"
+          : "Open your birthday letter"
+      );
+
+      envelopeNote.textContent = isOpen
+        ? "A little love, just for you 💗"
+        : "Click kori open koro.";
 
       if (isOpen) {
         sprinkleMagic(20);
       }
     });
 
-    // Floating sparkle effects, without adding external libraries.
+    // Decorative sparkle effects.
     function sprinkleMagic(amount = 25) {
-      const symbols = ["✦", "✧", "✨", "⋆", "♡", "✿"];
+      if (reducedMotion.matches) return;
 
-      for (let i = 0; i < amount; i++) {
+      const symbols = ["✦", "✧", "✨", "⋆", "♡", "✿"];
+      const colors = ["#ffe6a6", "#ffb9df", "#fff8ff"];
+
+      // Limit particles when the button is clicked repeatedly.
+      const existing = document.querySelectorAll(".sparkle").length;
+      const count = Math.max(0, Math.min(amount, 100 - existing));
+      const fragment = document.createDocumentFragment();
+
+      for (let i = 0; i < count; i++) {
         const sparkle = document.createElement("span");
+        const duration = 3 + Math.random() * 5;
+        const delay = Math.random() * 1.5;
 
         sparkle.className = "sparkle";
+        sparkle.setAttribute("aria-hidden", "true");
         sparkle.textContent =
           symbols[Math.floor(Math.random() * symbols.length)];
 
         sparkle.style.left = Math.random() * 100 + "vw";
-        sparkle.style.fontSize = (12 + Math.random() * 20) + "px";
-        sparkle.style.animationDuration = (3 + Math.random() * 5) + "s";
-        sparkle.style.animationDelay = Math.random() * 1.5 + "s";
+        sparkle.style.fontSize = 12 + Math.random() * 20 + "px";
+        sparkle.style.color =
+          colors[Math.floor(Math.random() * colors.length)];
+        sparkle.style.animationDuration = duration + "s";
+        sparkle.style.animationDelay = delay + "s";
         sparkle.style.opacity = String(0.5 + Math.random() * 0.5);
 
-        document.body.appendChild(sparkle);
+        const cleanupTimer = window.setTimeout(
+          () => sparkle.remove(),
+          (duration + delay) * 1000 + 500
+        );
 
-        sparkle.addEventListener("animationend", () => sparkle.remove());
+        sparkle.addEventListener(
+          "animationend",
+          () => {
+            window.clearTimeout(cleanupTimer);
+            sparkle.remove();
+          },
+          { once: true }
+        );
+
+        fragment.appendChild(sparkle);
       }
+
+      document.body.appendChild(fragment);
     }
 
     sparkleButton.addEventListener("click", () => {
       sprinkleMagic(45);
-    });
-
-    // Optional, synthesized birthday melody. Nothing plays automatically.
-    let audioContext = null;
-    let musicTimer = null;
-    let musicPlaying = false;
-    let noteIndex = 0;
-
-    const melody = [
-      [523.25, 0.28],
-      [523.25, 0.28],
-      [587.33, 0.55],
-      [523.25, 0.55],
-      [698.46, 0.55],
-      [659.25, 1.0],
-      [523.25, 0.28],
-      [523.25, 0.28],
-      [587.33, 0.55],
-      [523.25, 0.55],
-      [783.99, 0.55],
-      [698.46, 1.0]
-    ];
-
-    function playNote(frequency, duration) {
-      if (!audioContext) return;
-
-      const oscillator = audioContext.createOscillator();
-      const gain = audioContext.createGain();
-      const now = audioContext.currentTime;
-
-      oscillator.type = "sine";
-      oscillator.frequency.setValueAtTime(frequency, now);
-
-      gain.gain.setValueAtTime(0.0001, now);
-      gain.gain.exponentialRampToValueAtTime(0.12, now + 0.03);
-      gain.gain.exponentialRampToValueAtTime(
-        0.0001,
-        now + duration * 0.9
-      );
-
-      oscillator.connect(gain);
-      gain.connect(audioContext.destination);
-
-      oscillator.start(now);
-      oscillator.stop(now + duration);
-    }
-
-    async function startMusic() {
-      const AudioContextClass =
-        window.AudioContext || window.webkitAudioContext;
-
-      if (!AudioContextClass) {
-        musicButton.textContent = "Music isn't supported in this browser";
-        return;
-      }
-
-      try {
-        if (!audioContext) {
-          audioContext = new AudioContextClass();
-        }
-
-        await audioContext.resume();
-
-        musicPlaying = true;
-        musicButton.textContent = "♫ Stop Birthday Music";
-
-        function nextNote() {
-          if (!musicPlaying) return;
-
-          const [frequency, duration] = melody[noteIndex];
-          playNote(frequency, duration);
-
-          noteIndex = (noteIndex + 1) % melody.length;
-          musicTimer = window.setTimeout(
-            nextNote,
-            duration * 1000 + 100
-          );
-        }
-
-        nextNote();
-      } catch (error) {
-        musicButton.textContent = "Couldn't start music — try again";
-        musicPlaying = false;
-      }
-    }
-
-    function stopMusic() {
-      musicPlaying = false;
-      window.clearTimeout(musicTimer);
-      musicButton.textContent = "♫ Play Birthday Music";
-    }
-
-    musicButton.addEventListener("click", () => {
-      if (musicPlaying) {
-        stopMusic();
-      } else {
-        startMusic();
-      }
-    });
-
-    // Pause the melody if the tab becomes hidden.
-    document.addEventListener("visibilitychange", () => {
-      if (document.hidden && musicPlaying) {
-        stopMusic();
-      }
     });
   </script>
 </body>
